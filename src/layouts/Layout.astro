@@ -4,6 +4,9 @@ interface Props {
   title: string;
 }
 const { title } = Astro.props;
+
+// Détecter si c'est une page projet
+const isProjectPage = Astro.url.pathname.startsWith("/projects/");
 ---
 
 <!doctype html>
@@ -16,20 +19,22 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-[--background] md:px-48 lg:px-20 px-9">
-    <WelcomeAnimation />
-    <slot />
-    <!-- Conteneur persistant pour la musique Spotify -->
-    <div id="persistent-music" class="persistent-music">
-      <iframe 
-        style="border-radius:12px; border:0;"
-        src="https://open.spotify.com/embed/album/2ANVost0y2y52ema1E9xAZ?utm_source=generator&theme=0&autoplay=1"
-        width="300"
-        height="80"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy"
-        aria-label="Spotify Embed"
-      ></iframe>
-    </div>
+    
+    <!-- Si ce n'est pas une page projet, affiche l'animation de bienvenue -->
+    { !isProjectPage && <WelcomeAnimation /> }
+
+    <!-- Affichage d'un bouton retour uniquement sur les pages projets -->
+    { isProjectPage && (
+      <nav class="fixed top-0 left-0 w-full bg-[--sec] py-4 px-8 z-50">
+        <a href="/" class="text-white text-lg font-bold">← Retour</a>
+      </nav>
+    )}
+
+    <main class={isProjectPage ? "pt-16" : ""}>
+      <slot />
+    </main>
+
+    
   </body>
 </html>
 
@@ -80,8 +85,23 @@ const { title } = Astro.props;
   /* Style pour le conteneur de musique persistant */
   .persistent-music {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    top: 10px; /* Position en haut */
+    right: 10px; /* Aligné à droite */
     z-index: 1000;
+  }
+
+  .project-title {
+    white-space: pre-line;
+  }
+
+  /* Style du bouton retour */
+  nav a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
   }
 </style>

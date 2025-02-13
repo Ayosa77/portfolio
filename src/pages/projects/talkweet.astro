@@ -1,0 +1,81 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const project = {
+  title: "Talkweet - Stage BUT2",
+  description: "Refonte et sécurisation d'une application mobile permettant aux utilisateurs de découvrir, organiser et partager des événements locaux en temps réel.",
+  technologies: ["React Native", "Spring Boot", "JWT", "AES"],
+  image: "/talkweet.jpg"
+};
+---
+
+<Layout title={project.title}>
+  <section class="py-12 max-w-5xl mx-auto text-white">
+    <h1 class="text-4xl font-bold text-[var(--sec)]">{project.title}</h1>
+
+    <!-- 📱 Mockup d'un smartphone blanc -->
+    <div class="flex justify-center mt-6">
+      <div class="relative w-[180px] h-[350px] bg-white rounded-[30px] shadow-lg border-[6px] border-gray-300 overflow-hidden">
+        <!-- Notch en haut (blanc) -->
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[70px] h-[12px] black rounded-b-2xl"></div>
+        
+        <!-- Écran affichant l'application -->
+        <img src={project.image} alt={project.title} class="w-full h-full object-cover rounded-[24px]" />
+
+        <!-- Bouton bas (moderne) -->
+      </div>
+    </div>
+
+    <!-- 📌 Contexte du projet -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">📖 Contexte du projet</h2>
+    <p class="mt-4 text-lg leading-relaxed">
+      Talkweet est une application mobile permettant aux utilisateurs de découvrir et de partager des événements locaux. 
+      L'objectif de ce projet était de **refondre l’application existante**, d'améliorer **l’expérience utilisateur**, 
+      et surtout **de renforcer la sécurité** des données et des échanges entre utilisateurs.
+    </p>
+
+    <!-- 🎯 Objectifs du projet -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">🎯 Objectifs du projet</h2>
+    <ul class="mt-4 space-y-3 text-lg leading-relaxed">
+      <li>✅ Moderniser l’interface utilisateur avec **React Native** pour une navigation fluide et intuitive.</li>
+      <li>✅ Sécuriser les données utilisateur via **un chiffrement avancé (AES, JWT)**.</li>
+      <li>✅ Améliorer les performances backend grâce à **Spring Boot** et optimiser la gestion des requêtes API.</li>
+      <li>✅ Ajouter un **système de notifications en temps réel** pour tenir les utilisateurs informés des événements.</li>
+    </ul>
+
+    <!-- 🛠️ Fonctionnalités principales -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">🛠️ Fonctionnalités principales</h2>
+    <ul class="mt-4 space-y-4 text-lg leading-relaxed">
+      <li>📍 <strong>Découverte des événements :</strong> Un fil d’actualité affichant les événements à proximité, avec une recherche par localisation et catégories.</li>
+      <li>📝 <strong>Création et gestion d’événements :</strong> Interface permettant aux utilisateurs de publier, modifier et partager leurs événements.</li>
+      <li>🔒 <strong>Sécurisation des comptes :</strong> Implémentation de **JWT** pour gérer les authentifications et de **chiffrement AES** pour les données sensibles.</li>
+      <li>💬 <strong>Messagerie instantanée :</strong> Ajout d’un module de chat sécurisé pour permettre aux participants d’échanger avant un événement.</li>
+      <li>🔔 <strong>Notifications push :</strong> Système d’alertes pour informer les utilisateurs des nouveaux événements ou des changements.</li>
+    </ul>
+
+    <!-- 🚀 Défis et solutions -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">🚀 Défis et solutions</h2>
+    <p class="mt-4 text-lg leading-relaxed">
+      Plusieurs défis ont été relevés durant ce projet :
+    </p>
+    <ul class="mt-4 space-y-3 text-lg leading-relaxed">
+      <li>🔐 <strong>Renforcement de la sécurité :</strong> Mise en place de **JWT** pour l’authentification sécurisée et **AES** pour le stockage des données sensibles.</li>
+      <li>⚡ <strong>Optimisation des performances :</strong> Réduction des temps de chargement grâce à **une gestion améliorée des requêtes API**.</li>
+      <li>📲 <strong>Compatibilité multi-plateforme :</strong> Adaptation de l’interface pour une expérience homogène sur iOS et Android.</li>
+      <li>🔄 <strong>Mise en place du temps réel :</strong> Développement d’un **système WebSocket** pour actualiser instantanément les événements et les messages.</li>
+    </ul>
+
+    <!-- 🛠️ Technologies utilisées -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">🛠️ Technologies utilisées</h2>
+    <ul class="mt-4 space-y-3 text-lg leading-relaxed">
+      {project.technologies.map(tech => (
+        <li>🔹 {tech}</li>
+      ))}
+    </ul>
+
+    <!-- 🔗 Lien vers le GitHub -->
+    <a href="https://github.com/ayosa77" target="_blank" class="mt-8 inline-block px-6 py-3 bg-purple-600 rounded-lg text-white text-lg font-semibold hover:bg-purple-700 transition-all">
+      🚀 Voir le projet sur GitHub
+    </a>
+  </section>
+</Layout>

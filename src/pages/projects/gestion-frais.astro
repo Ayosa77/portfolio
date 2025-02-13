@@ -1,0 +1,69 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const project = {
+  title: "Gestion des frais professionnels - SAE S4.A.01",
+  description: "Une application web permettant aux employés de soumettre, suivre et gérer leurs frais professionnels de manière efficace et sécurisée.",
+  technologies: ["Node.js", "Express", "MySQL", "React"],
+  image: "/stockin.png"
+};
+---
+
+<Layout title={project.title}>
+  <section class="py-12 max-w-5xl mx-auto text-white">
+    <h1 class="text-4xl font-bold text-[var(--sec)]">{project.title}</h1>
+    <img src={project.image} alt={project.title} class="mt-6 w-full max-w-3xl mx-auto rounded-2xl shadow-xl border border-gray-700" />
+
+    <!-- 📌 Contexte du projet -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">📖 Contexte du projet</h2>
+    <p class="mt-4 text-lg leading-relaxed">
+      La gestion des frais professionnels représente un défi pour de nombreuses entreprises, notamment en termes de suivi, de validation et de remboursement.
+      Ce projet a pour objectif de développer une plateforme digitale intuitive permettant aux employés de **soumettre leurs notes de frais** 
+      et aux gestionnaires de **les approuver ou les rejeter rapidement**.
+    </p>
+
+    <!-- 🎯 Objectifs du projet -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">🎯 Objectifs du projet</h2>
+    <ul class="mt-4 space-y-3 text-lg leading-relaxed">
+      <li>✅ Offrir une interface intuitive permettant aux employés d’ajouter leurs **frais professionnels en quelques clics**.</li>
+      <li>✅ Permettre aux **managers et comptables** de valider, modifier ou rejeter les demandes.</li>
+      <li>✅ Automatiser le processus de **vérification des justificatifs** et du suivi des remboursements.</li>
+      <li>✅ Intégrer un **système de notifications** pour informer les employés de l’état de leurs demandes.</li>
+    </ul>
+
+    <!-- 🛠️ Fonctionnalités principales -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">🛠️ Fonctionnalités principales</h2>
+    <ul class="mt-4 space-y-4 text-lg leading-relaxed">
+      <li>📝 <strong>Soumission des frais :</strong> Un formulaire dynamique permettant aux employés d’envoyer des demandes de remboursement.</li>
+      <li>🔍 <strong>Validation par les managers :</strong> Système de workflow permettant aux responsables de valider ou rejeter les frais soumis.</li>
+      <li>📊 <strong>Tableau de suivi :</strong> Une interface permettant aux employés et managers de voir l’historique des remboursements.</li>
+      <li>📎 <strong>Gestion des justificatifs :</strong> Possibilité de téléverser des fichiers (factures, tickets de caisse) pour appuyer les demandes.</li>
+      <li>📢 <strong>Notifications en temps réel :</strong> Alerte envoyée aux employés lorsqu'un frais est approuvé, rejeté ou en attente.</li>
+    </ul>
+
+    <!-- 🚀 Défis et solutions -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">🚀 Défis et solutions</h2>
+    <p class="mt-4 text-lg leading-relaxed">
+      Plusieurs défis ont été rencontrés et résolus au cours du développement :
+    </p>
+    <ul class="mt-4 space-y-3 text-lg leading-relaxed">
+      <li>🔐 <strong>Sécurisation des données :</strong> Implémentation d’un **système d’authentification JWT** et chiffrement des données sensibles.</li>
+      <li>📂 <strong>Stockage des justificatifs :</strong> Intégration d'un **système de gestion de fichiers cloud sécurisé**.</li>
+      <li>⏳ <strong>Optimisation des performances :</strong> Requêtes SQL optimisées et indexation de la base de données MySQL pour **accélérer les chargements**.</li>
+      <li>⚡ <strong>Automatisation des processus :</strong> Développement de scripts backend pour **envoyer des notifications automatiques** aux employés.</li>
+    </ul>
+
+    <!-- 🛠️ Technologies utilisées -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">🛠️ Technologies utilisées</h2>
+    <ul class="mt-4 space-y-3 text-lg leading-relaxed">
+      {project.technologies.map(tech => (
+        <li>🔹 {tech}</li>
+      ))}
+    </ul>
+
+    <!-- 🔗 Lien vers le GitHub -->
+    <a href="https://github.com/ayosa77" target="_blank" class="mt-8 inline-block px-6 py-3 bg-purple-600 rounded-lg text-white text-lg font-semibold hover:bg-purple-700 transition-all">
+      🚀 Voir le projet sur GitHub
+    </a>
+  </section>
+</Layout>

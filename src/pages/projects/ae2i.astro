@@ -1,0 +1,68 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const project = {
+  title: "SAE S5.A.01 - Application Web AE2i",
+  description: "Une plateforme web complète pour la gestion et l’administration des associations étudiantes AE2i, offrant un espace sécurisé pour les étudiants et les administrateurs.",
+  technologies: ["Flask", "MongoDB", "React", "Docker"],
+  image: "/ae2i.png"
+};
+---
+
+<Layout title={project.title}>
+  <section class="py-12 max-w-5xl mx-auto text-white">
+    <h1 class="text-4xl font-bold text-[var(--sec)]">{project.title}</h1>
+    <img src={project.image} alt={project.title} class="mt-6 w-full max-w-3xl mx-auto rounded-2xl shadow-xl border border-gray-700" />
+
+    <!-- 📌 Contexte du projet -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">📖 Contexte du projet</h2>
+    <p class="mt-4 text-lg leading-relaxed">
+      Dans le cadre de la SAE S5.A.01, nous avons développé une application web complète pour la gestion des associations étudiantes **AE2i**. 
+      Cette plateforme vise à améliorer la gestion des membres, des événements et des ressources en fournissant une interface moderne et intuitive.
+    </p>
+
+    <!-- 🎯 Objectifs du projet -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">🎯 Objectifs du projet</h2>
+    <ul class="mt-4 space-y-3 text-lg leading-relaxed">
+      <li>✅ Développer une <strong>plateforme web sécurisée</strong> permettant aux étudiants de s'inscrire et de gérer leur adhésion.</li>
+      <li>✅ Mettre en place une <strong>interface d’administration</strong> pour gérer les membres, les événements et les finances.</li>
+      <li>✅ Proposer un <strong>système de boutique en ligne</strong> pour les produits/services vendus par l’association.</li>
+      <li>✅ Créer une <strong>API REST</strong> garantissant une communication fluide entre le frontend et le backend.</li>
+    </ul>
+
+    <!-- 🛠️ Fonctionnalités principales -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">🛠️ Fonctionnalités principales</h2>
+    <ul class="mt-4 space-y-4 text-lg leading-relaxed">
+      <li>📌 <strong>Inscription et gestion des membres :</strong> Interface utilisateur permettant aux étudiants de créer un compte et gérer leur adhésion.</li>
+      <li>📅 <strong>Gestion des événements :</strong> Outil permettant aux administrateurs de créer, modifier et suivre les inscriptions aux événements.</li>
+      <li>🛒 <strong>Boutique en ligne :</strong> E-commerce intégré avec un système de paiement sécurisé pour l’achat de produits liés à l’association.</li>
+      <li>📊 <strong>Tableau de bord administrateur :</strong> Suivi des adhésions, paiements et évolution des événements.</li>
+      <li>🔒 <strong>Sécurité et authentification :</strong> Implémentation de JWT pour sécuriser les accès et garantir une authentification robuste.</li>
+    </ul>
+
+    <!-- 🚀 Défis et solutions -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">🚀 Défis et solutions</h2>
+    <p class="mt-4 text-lg leading-relaxed">
+      Plusieurs défis techniques ont été rencontrés au cours du projet :
+    </p>
+    <ul class="mt-4 space-y-3 text-lg leading-relaxed">
+      <li>🔑 <strong>Gestion des accès :</strong> Implémentation d’un système de rôles (utilisateur, administrateur) avec permissions spécifiques.</li>
+      <li>⚡ <strong>Optimisation des requêtes :</strong> Utilisation de MongoDB avec indexation avancée pour améliorer la performance.</li>
+      <li>💳 <strong>Intégration des paiements :</strong> Mise en place d’un système de paiement sécurisé pour la boutique.</li>
+      <li>🚢 <strong>Déploiement en production :</strong> Docker et CI/CD pour une livraison continue et automatisée.</li>
+    </ul>
+
+    <!-- 🛠️ Technologies utilisées -->
+    <h2 class="mt-12 text-3xl font-semibold border-b border-gray-700 pb-2">🛠️ Technologies utilisées</h2>
+    <ul class="mt-4 space-y-3 text-lg leading-relaxed">
+      {project.technologies.map(tech => (
+        <li>🔹 {tech}</li>
+      ))}
+    </ul>
+
+    <!-- 🔗 Lien vers le GitHub -->
+    <a href="https://github.com/ayosa77" target="_blank" class="mt-8 inline-block px-6 py-3 bg-purple-600 rounded-lg text-white text-lg font-semibold hover:bg-purple-700 transition-all">
+      🚀 Voir le projet sur GitHub
+    </a>
+  </section>
+</Layout>

@@ -2,10 +2,9 @@ import React from 'react';
 
 const SkillsList = () => {
   const skills = [
-    "Créer des applications en utilisant divers langages de programmation",
-    "Concevoir des interfaces utilisateur conviviales et réactives",
-    "Manipuler et analyser des données",
-    "Transformer des ensembles de données en informations exploitables"
+    "Réaliser un développement d'application",
+    "Optimiser des applications",
+    "Collaborer au sein d'une équipe informatique"
   ];
 
   return (
@@ -14,7 +13,7 @@ const SkillsList = () => {
         Mes compétences techniques
       </h2>
       <p className="text-[var(--white-icon)] mb-6">
-        Voici quelques-unes des compétences que je maîtrise :
+        Voici les compétences acquises en BUT Informatique.:
       </p>
       <ul className="space-y-3 text-lg">
         {skills.map((skill, index) => (
